@@ -17,27 +17,26 @@ public class LoginController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-	private SignUp signUp;
-    
     @FXML
     private Text actiontarget;
     @FXML
     private PasswordField passwordField;
     @FXML
     private TextField usernameField;
-    
-    public LoginController() 
+    SignUp signUpManager;
+    @FXML
+    public void initialize() 
     {
-        this.signUp = new SignUp();
+        signUpManager = Singleton.getInstance();
     }
-
     @FXML
     public void switchtoMain(ActionEvent event) throws IOException {
         //Login code logic goes here
     	String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (signUp.contains(username) && signUp.checkPassword(username, password)) 
+		
+		if (signUpManager.checkPassword(username, password))
         {
             root = FXMLLoader.load(getClass().getResource("Main.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -47,10 +46,9 @@ public class LoginController {
         }
         else 
         {
-            //actiontarget.setText("No matching account found! Try again or Sign Up.");
+            actiontarget.setText("No matching account found");
         }
     }
-
     @FXML
     public void switchtoSignUp(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));

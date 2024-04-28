@@ -1,5 +1,4 @@
 package com.example.cloudcastcs151;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +13,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
 public class WelcomeController {
     private Stage stage;
     private Scene scene;
@@ -27,15 +25,12 @@ public class WelcomeController {
     private TextField usernameField;
     @FXML
     private TextField cityField;
-    
-    private SignUp signUpManager;
-    
+    SignUp signUpManager;
     @FXML
     public void initialize() 
     {
-        signUpManager = new SignUp();
+        signUpManager = Singleton.getInstance();
     }
-    
     @FXML
     public void signUpUser(ActionEvent event) throws IOException {
     	//Code logic for Sign Up goes here
@@ -48,9 +43,7 @@ public class WelcomeController {
         	actiontarget.setText("This username already exists! Try again.");
             return;
         }
-        
         signUpManager.add(username, password, city);
-        actiontarget.setText("Account Created! Please Login.");
         
         root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
