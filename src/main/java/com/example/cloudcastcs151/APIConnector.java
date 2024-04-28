@@ -28,7 +28,7 @@ public class APIConnector {
     private Label displayCity;
     @FXML
     public void updateWeather(ActionEvent event) {
-        String API_KEY = "8b46f4be558820768ca1bcf2feed0b90";
+        String API_KEY = "8a83524b23580e54748e112e5f1e76d4";
         String location = "Raleigh";
         String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_KEY + "&units=imperial";
         double temperature = 0;
