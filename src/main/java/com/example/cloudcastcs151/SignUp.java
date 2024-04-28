@@ -1,5 +1,4 @@
 package com.example.cloudcastcs151;
-
 public class SignUp {
 private Node head;
     public SignUp() 
