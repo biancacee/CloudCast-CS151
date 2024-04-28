@@ -31,6 +31,8 @@ public class APIConnector {
     @FXML
     private ImageView weatherImage;
     @FXML
+    private Label displayHumidity;
+    @FXML
     public void updateWeather(ActionEvent event) {
         String API_KEY = "e5f47ba96bff191a635b0a694812890a";
         Scanner scanner = new Scanner(System.in);
@@ -40,6 +42,7 @@ public class APIConnector {
         String city = null;
         String icon = null;
         String iconCode = null;
+        Integer humidity = null;
         try {
             StringBuilder result = new StringBuilder();
             URL url = new URL(urlString);
@@ -54,8 +57,9 @@ public class APIConnector {
             rd.close();
             JSONObject jsonResponse = new JSONObject(result.toString());
             temperature = jsonResponse.getJSONObject("main").getDouble("temp");
+            humidity = jsonResponse.getJSONObject("main").getInt("humidity");
             city = jsonResponse.getString("name");
-            System.out.println(temperature + city);
+            System.out.println(temperature + city+humidity);
             JSONArray weatherArray = jsonResponse.getJSONArray("weather");
             if (weatherArray.length() > 0) {
                 JSONObject weatherObject = weatherArray.getJSONObject(0);
@@ -67,6 +71,7 @@ public class APIConnector {
         }
         displayTemp.setText(String.valueOf(temperature));
         displayCity.setText(city);
+        displayHumidity.setText(String.valueOf(humidity));
 
         if (iconCode != null)
         {
