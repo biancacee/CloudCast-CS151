@@ -1,14 +1,11 @@
 package com.example.cloudcastcs151;
 
 public class SignUp {
-	
 private Node head;
-    
     public SignUp() 
     {
         head = null;
     }
-    
     public void add(String username, String password, String city) 
     {
         Node node = new Node(username, password, city);
@@ -26,7 +23,6 @@ private Node head;
             curr.next = node;
         }
     }
-    
     public boolean contains(String username) 
     {
         Node curr = head;
@@ -40,7 +36,6 @@ private Node head;
         }
         return false;
     }
-    
     public boolean checkPassword(String username, String password) 
     {
         Node curr = head;
@@ -54,7 +49,6 @@ private Node head;
         }
         return false;
     }
-    
     public void delete(String username) 
     {
     	Node prev = head;
