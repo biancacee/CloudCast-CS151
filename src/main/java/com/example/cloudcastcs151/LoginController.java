@@ -47,7 +47,7 @@ public class LoginController {
         }
         else 
         {
-            //actiontarget.setText("No matching account found! Try again or Sign Up.");
+            actiontarget.setText("No matching account found");
         }
     }
 
