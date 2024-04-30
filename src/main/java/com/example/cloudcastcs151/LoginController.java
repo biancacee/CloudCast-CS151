@@ -34,7 +34,6 @@ public class LoginController {
         //Login code logic goes here
     	String username = usernameField.getText();
         String password = passwordField.getText();
-
 		
 		if (signUpManager.checkPassword(username, password))
         {
