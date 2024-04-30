@@ -35,6 +35,36 @@
                   <Font name="Calibri Bold" size="30.0" />
                </font>
             </Label>
+            <Label fx:id="displayRain" layoutX="51" layoutY="200" text="Rain (mm/h)" textFill="#f6f2f2">
+               <font>
+                  <Font name="Calibri Bold" size="30.0"/>
+               </font>
+            </Label>
+            <Label fx:id="displaySunrise" layoutX="51" layoutY="200" text="Sunrise" textFill="#f6f2f2">
+               <font>
+                  <Font name="Calibri Bold" size="30.0"/>
+               </font>
+            </Label>
+            <Label fx:id="displaySunset" layoutX="51" layoutY="200" text="Sunset" textFill="#f6f2f2">
+               <font>
+                  <Font name="Calibri Bold" size="30.0"/>
+               </font>
+            </Label>
+            <Label fx:id="displayWindSpeed" layoutX="50" layoutY="200" text="Wind Speed" textFill="#f6f2f2">
+               <font>
+                  <Font name = "Calibri Bold" size="30.0"/>
+               </font>
+            </Label>
+            <Label fx:id="displayWindGust" layoutX="50" layoutY="200" text="Wind Gusts" textFill="#f6f2f2">
+               <font>
+                  <Font name = "Calibri Bold" size="30.0"/>
+               </font>
+            </Label>
+            <Label fx:id="displayWindDegree" layoutX="50" layoutY="200" text="Wind Degree" textFill="#f6f2f2">
+               <font>
+                  <Font name = "Calibri Bold" size="30.0"/>
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
