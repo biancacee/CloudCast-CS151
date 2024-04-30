@@ -23,13 +23,19 @@ public class LoginController {
     private PasswordField passwordField;
     @FXML
     private TextField usernameField;
+    SignUp signUpManager;
+    @FXML
+    public void initialize() 
+    {
+        signUpManager = Singleton.getInstance();
+    }
     @FXML
     public void switchtoMain(ActionEvent event) throws IOException {
         //Login code logic goes here
     	String username = usernameField.getText();
         String password = passwordField.getText();
-
-        if (com.example.cloudcastcs151.Node.contains(username) && com.example.cloudcastcs151.Node.checkPassword(username, password))
+		
+		if (signUpManager.checkPassword(username, password))
         {
             root = FXMLLoader.load(getClass().getResource("Main.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

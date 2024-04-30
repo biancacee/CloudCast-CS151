@@ -25,11 +25,11 @@ public class WelcomeController {
     private TextField usernameField;
     @FXML
     private TextField cityField;
-    private SignUp signUpManager;
+    SignUp signUpManager;
     @FXML
     public void initialize() 
     {
-        signUpManager = new SignUp();
+        signUpManager = Singleton.getInstance();
     }
     @FXML
     public void signUpUser(ActionEvent event) throws IOException {
@@ -44,7 +44,6 @@ public class WelcomeController {
             return;
         }
         signUpManager.add(username, password, city);
-        actiontarget.setText("Account Created! Please Login.");
         
         root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

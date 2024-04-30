@@ -35,6 +35,7 @@ public class APIConnector {
     @FXML
     public void updateWeather(ActionEvent event) {
         String API_KEY = "e5f47ba96bff191a635b0a694812890a";
+
         Scanner scanner = new Scanner(System.in);
         String location = searchCity.getText();
         String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_KEY + "&units=imperial";
