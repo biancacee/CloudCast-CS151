@@ -33,6 +33,18 @@ public class APIConnector {
     @FXML
     private Label displayHumidity;
     @FXML
+    private Label displaySunrise;
+    @FXML
+    private Label displaySunset;
+    @FXML
+    private Label displayWindSpeed;
+    @FXML
+    private Label displayWindGust;
+    @FXML
+    private Label displayWindDegree;
+    @FXML
+    private Label displayRain;
+    @FXML
     public void updateWeather(ActionEvent event) {
         String API_KEY = "e5f47ba96bff191a635b0a694812890a";
         Scanner scanner = new Scanner(System.in);
@@ -43,6 +55,12 @@ public class APIConnector {
         String icon = null;
         String iconCode = null;
         Integer humidity = null;
+        String sunrise = null;
+        String sunset = null;
+        String windSpeed = null;
+        String windGust = null;
+        String windDegree = null;
+        Double rain = 0.0;
         try {
             StringBuilder result = new StringBuilder();
             URL url = new URL(urlString);
@@ -59,7 +77,13 @@ public class APIConnector {
             temperature = jsonResponse.getJSONObject("main").getDouble("temp");
             humidity = jsonResponse.getJSONObject("main").getInt("humidity");
             city = jsonResponse.getString("name");
-            System.out.println(temperature + city+humidity);
+            sunrise = jsonResponse.getJSONObject("main").getString("sunrise");
+            sunset = jsonResponse.getJSONObject("main").getString("sunset");
+            windSpeed = jsonResponse.getJSONObject("main").getString("wind_speed");
+            windGust = jsonResponse.getJSONObject("main").getString("wind_gust");
+            windDegree = jsonResponse.getJSONObject("main").getString("wind_deg");
+            rain = jsonResponse.getJSONObject("main").getDouble("rain");
+            System.out.println(temperature + city+humidity+sunrise+sunset);
             JSONArray weatherArray = jsonResponse.getJSONArray("weather");
             if (weatherArray.length() > 0) {
                 JSONObject weatherObject = weatherArray.getJSONObject(0);
@@ -72,6 +96,12 @@ public class APIConnector {
         displayTemp.setText(String.valueOf(temperature));
         displayCity.setText(city);
         displayHumidity.setText(String.valueOf(humidity));
+        displaySunrise.setText(String.valueOf(sunrise));
+        displaySunset.setText(String.valueOf(sunset));
+        displayWindSpeed.setText(String.valueOf(windSpeed));
+        displayWindGust.setText(String.valueOf(windGust));
+        displayWindDegree.setText(String.valueOf(windDegree));
+        displayRain.setText(String.valueOf(rain));
 
         if (iconCode != null)
         {
