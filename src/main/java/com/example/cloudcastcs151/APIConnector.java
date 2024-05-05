@@ -45,22 +45,25 @@ public class APIConnector {
     @FXML
     private Label displayRain;
     @FXML
+    private Label displayFeelsLike;
+    @FXML
     public void updateWeather(ActionEvent event) {
         String API_KEY = "e5f47ba96bff191a635b0a694812890a";
 
         Scanner scanner = new Scanner(System.in);
         String location = searchCity.getText();
-        String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_KEY + "&units=imperial";
+        String urlString = "https://api.openweathermap.org/data/2.5/weather?q=raleigh&appid=1612512dcbfc472803d83860453ee9b1&units=imperial";
         double temperature = 0;
+        double feels_like = 0;
         String city = null;
         String icon = null;
         String iconCode = null;
         Integer humidity = null;
-        String sunrise = null;
-        String sunset = null;
-        String windSpeed = null;
-        String windGust = null;
-        String windDegree = null;
+        int sunrise = 0;
+        int sunset = 0;
+        double windSpeed = 0.0;
+        double windGust = 0.0;
+        int windDegree = 0;
         Double rain = 0.0;
         try {
             StringBuilder result = new StringBuilder();
@@ -76,15 +79,16 @@ public class APIConnector {
             rd.close();
             JSONObject jsonResponse = new JSONObject(result.toString());
             temperature = jsonResponse.getJSONObject("main").getDouble("temp");
+            feels_like = jsonResponse.getJSONObject("main").getDouble("feels_like");
             humidity = jsonResponse.getJSONObject("main").getInt("humidity");
             city = jsonResponse.getString("name");
-            sunrise = jsonResponse.getJSONObject("main").getString("sunrise");
-            sunset = jsonResponse.getJSONObject("main").getString("sunset");
-            windSpeed = jsonResponse.getJSONObject("main").getString("wind_speed");
-            windGust = jsonResponse.getJSONObject("main").getString("wind_gust");
-            windDegree = jsonResponse.getJSONObject("main").getString("wind_deg");
-            rain = jsonResponse.getJSONObject("main").getDouble("rain");
-            System.out.println(temperature + city+humidity+sunrise+sunset);
+            sunrise = jsonResponse.getJSONObject("sys").getInt("sunrise");
+            sunset = jsonResponse.getJSONObject("sys").getInt("sunset");
+            windSpeed = jsonResponse.getJSONObject("wind").getDouble("speed");
+           // windGust = jsonResponse.getJSONObject("wind").getDouble("gust");
+            windDegree = jsonResponse.getJSONObject("wind").getInt("deg");
+       //     rain = jsonResponse.getJSONObject("rain").getDouble("1h");
+            System.out.println(temperature + city+humidity);
             JSONArray weatherArray = jsonResponse.getJSONArray("weather");
             if (weatherArray.length() > 0) {
                 JSONObject weatherObject = weatherArray.getJSONObject(0);
@@ -94,15 +98,16 @@ public class APIConnector {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        displayTemp.setText(String.valueOf(temperature));
-        displayCity.setText(city);
-        displayHumidity.setText(String.valueOf(humidity));
-        displaySunrise.setText(String.valueOf(sunrise));
-        displaySunset.setText(String.valueOf(sunset));
-        displayWindSpeed.setText(String.valueOf(windSpeed));
-        displayWindGust.setText(String.valueOf(windGust));
-        displayWindDegree.setText(String.valueOf(windDegree));
-        displayRain.setText(String.valueOf(rain));
+        displayTemp.setText("Temperature: "+String.valueOf(temperature));
+        displayFeelsLike.setText("Feels Like: "+String.valueOf(feels_like));
+        displayCity.setText("City: "+ city);
+        displayHumidity.setText("Humidity: "+String.valueOf(humidity));
+        displaySunrise.setText("Sunrise: "+String.valueOf(sunrise));
+        displaySunset.setText("Sunset: "+String.valueOf(sunset));
+        displayWindSpeed.setText("Wind Speed: "+String.valueOf(windSpeed));
+      //  displayWindGust.setText(String.valueOf(windGust));
+        displayWindDegree.setText("Wind Degree: "+String.valueOf(windDegree));
+        //displayRain.setText(String.valueOf(rain));
 
         if (iconCode != null)
         {
