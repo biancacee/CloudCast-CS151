@@ -10,20 +10,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cloudcastcs151.WelcomeController">
+<Pane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cloudcastcs151.WelcomeController">
     <children>
-        <ImageView fitHeight="407.0" fitWidth="600.0" layoutY="-1.0" pickOnBounds="true">
+        <ImageView fitHeight="475.0" fitWidth="765.0" layoutY="-1.0" pickOnBounds="true">
             <image>
                 <Image url="@sjsuweatherapp.jpg" />
             </image>
         </ImageView>
-        <Pane layoutX="366.0" layoutY="-1.0" prefHeight="407.0" prefWidth="234.0" style="-fx-background-color: rgba(31,29,40,.8);">
+        <Pane layoutX="501.0" prefHeight="475.0" prefWidth="264.0" style="-fx-background-color: rgba(31,29,40,.8);">
             <children>
                 <TextField fx:id="usernameField" layoutX="81.0" layoutY="128.0" />
-                <Button layoutX="90.0" layoutY="249.0" mnemonicParsing="false" onAction="#signUpUser" text="Sign Up" />
-                <Label fx:id="WelcomeText" layoutX="46.0" layoutY="28.0" text="Welcome" textFill="WHITE">
+                <Button layoutX="101.0" layoutY="247.0" mnemonicParsing="false" onAction="#signUpUser" styleClass="modern-button" stylesheets="@main.css" text="Sign Up" />
+                <Label fx:id="WelcomeText" layoutX="34.0" layoutY="33.0" prefHeight="41.0" prefWidth="197.0" text="Welcome to" textFill="WHITE">
                     <font>
-                        <Font name="Calibri Bold" size="36.0" />
+                        <Font name="Calibri Light" size="36.0" />
                     </font>
                 </Label>
             <Label fx:id="username" layoutX="14.0" layoutY="134.0" prefHeight="14.0" prefWidth="67.0" text="Username:" textFill="WHITE">
@@ -36,12 +36,12 @@
                   <Font name="Calibri Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="displayCity12" layoutX="72.0" layoutY="341.0" prefHeight="14.0" prefWidth="104.0" text="Already a Member?" textFill="WHITE">
+            <Label fx:id="displayCity12" layoutX="91.0" layoutY="334.0" prefHeight="14.0" prefWidth="104.0" text="Already a Member?" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="12.0" />
                </font>
             </Label>
-            <Button layoutX="94.0" layoutY="368.0" mnemonicParsing="false" onAction="#switchtoLogin" text="Log In" />
+            <Button layoutX="106.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchtoLogin" styleClass="modern-button" stylesheets="@main.css" text="Log In" />
             <TextField fx:id="cityField" layoutX="81.0" layoutY="204.0" />
             <Label fx:id="cityName" layoutX="14.0" layoutY="210.0" prefHeight="14.0" prefWidth="67.0" text="    City:" textFill="WHITE">
                <font>
@@ -50,6 +50,11 @@
             </Label>
             <PasswordField fx:id="passwordField" layoutX="81.0" layoutY="165.0" />
             <Text fx:id="actiontarget" fill="WHITE" layoutX="108.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Label fx:id="WelcomeText1" layoutX="52.0" layoutY="74.0" prefHeight="41.0" prefWidth="161.0" text="Cloud Cast" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="36.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
     </children>

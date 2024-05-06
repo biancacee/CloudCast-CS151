@@ -13,8 +13,10 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Scanner;
 
 public class APIConnector {
@@ -47,12 +49,14 @@ public class APIConnector {
     @FXML
     private Label displayFeelsLike;
     @FXML
-    public void updateWeather(ActionEvent event) {
-        String API_KEY = "e5f47ba96bff191a635b0a694812890a";
+    public void updateWeather(ActionEvent event) throws UnsupportedEncodingException {
+        String API_KEY = "1612512dcbfc472803d83860453ee9b1";
 
         Scanner scanner = new Scanner(System.in);
         String location = searchCity.getText();
-        String urlString = "https://api.openweathermap.org/data/2.5/weather?q=raleigh&appid=1612512dcbfc472803d83860453ee9b1&units=imperial";
+        String encodedLocation = URLEncoder.encode(location, "UTF-8");
+
+        String urlString = "https://api.openweathermap.org/data/2.5/weather?q="+encodedLocation+"&appid="+ API_KEY +"&units=imperial";
         double temperature = 0;
         double feels_like = 0;
         String city = null;
