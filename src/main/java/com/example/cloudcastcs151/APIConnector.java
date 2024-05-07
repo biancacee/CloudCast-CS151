@@ -17,6 +17,9 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Scanner;
 
 public class APIConnector {
@@ -50,7 +53,7 @@ public class APIConnector {
     private Label displayFeelsLike;
     @FXML
     public void updateWeather(ActionEvent event) throws UnsupportedEncodingException {
-        String API_KEY = "1612512dcbfc472803d83860453ee9b1";
+        String API_KEY = "";
 
         Scanner scanner = new Scanner(System.in);
         String location = searchCity.getText();
@@ -102,15 +105,17 @@ public class APIConnector {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        displayTemp.setText("Temperature: "+String.valueOf(temperature));
-        displayFeelsLike.setText("Feels Like: "+String.valueOf(feels_like));
-        displayCity.setText("City: "+ city);
-        displayHumidity.setText("Humidity: "+String.valueOf(humidity));
-        displaySunrise.setText("Sunrise: "+String.valueOf(sunrise));
-        displaySunset.setText("Sunset: "+String.valueOf(sunset));
-        displayWindSpeed.setText("Wind Speed: "+String.valueOf(windSpeed));
+        LocalDateTime sunriseTime = LocalDateTime.ofInstant(Instant.ofEpochSecond(sunrise), ZoneId.systemDefault());
+        LocalDateTime sunsetTime = LocalDateTime.ofInstant(Instant.ofEpochSecond(sunset), ZoneId.systemDefault());
+        displayTemp.setText("Temperature: "+String.valueOf(temperature+"\u00B0F"));
+        displayFeelsLike.setText("Feels Like: "+String.valueOf(feels_like+ "\u00B0F"));
+        displayCity.setText(city);
+        displayHumidity.setText("Humidity: "+String.valueOf(humidity + "%"));
+        displaySunrise.setText("Sunrise: " + sunriseTime.toLocalTime());
+        displaySunset.setText("Sunset: " + sunsetTime.toLocalTime());
+        displayWindSpeed.setText("Wind Speed: "+String.valueOf(windSpeed + " mph"));
       //  displayWindGust.setText(String.valueOf(windGust));
-        displayWindDegree.setText("Wind Degree: "+String.valueOf(windDegree));
+        displayWindDegree.setText("Wind Degree: "+String.valueOf(windDegree + "\u00B0"));
         //displayRain.setText(String.valueOf(rain));
 
         if (iconCode != null)

@@ -19,7 +19,7 @@
          <children>
             <TextField fx:id="searchCity" layoutX="173.0" layoutY="18.0" />
             <Button fx:id="submitCity" layoutX="80.0" layoutY="13.0" mnemonicParsing="false" onAction="#updateWeather" styleClass="modern-button" stylesheets="@main.css" text="Search" />
-            <Label fx:id="displayCity" layoutX="64.0" layoutY="55.0" prefHeight="41.0" prefWidth="259.0" text="City" textFill="WHITE">
+            <Label fx:id="displayCity" layoutX="8.0" layoutY="55.0" prefHeight="41.0" prefWidth="374.0" textFill="WHITE">
                <font>
                   <Font name="Calibri Light" size="36.0" />
                </font>
@@ -29,39 +29,39 @@
                   <ImageView fx:id="weatherImage" fitHeight="159.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
-            <Pane layoutX="48.0" layoutY="303.0" opacity="0.68" prefHeight="266.0" prefWidth="305.0" style="-fx-background-color: black;" styleClass="rounded-pane" stylesheets="@main.css">
+            <Pane layoutX="36.0" layoutY="303.0" opacity="0.68" prefHeight="266.0" prefWidth="326.0" style="-fx-background-color: black;" styleClass="rounded-pane" stylesheets="@main.css">
                <children>
-                  <Label fx:id="displayWindSpeed" layoutX="14.0" layoutY="90.0" prefHeight="35.0" prefWidth="282.0" text="Wind Speed" textFill="#f6f2f2">
+                  <Label fx:id="displayWindSpeed" layoutX="12.0" layoutY="90.0" prefHeight="35.0" prefWidth="311.0" text="Wind Speed:" textFill="#f6f2f2">
                      <font>
                         <Font name="Calibri Light" size="30.0" />
                      </font>
                   </Label>
-                  <Label fx:id="displayTemp" layoutX="12.0" layoutY="8.0" prefHeight="41.0" prefWidth="275.0" text="Temp" textFill="#f6f2f2">
+                  <Label fx:id="displayTemp" layoutX="12.0" layoutY="8.0" prefHeight="41.0" prefWidth="275.0" text="Temp:" textFill="#f6f2f2">
                      <font>
                         <Font name="Calibri Light" size="30.0" />
                      </font>
                   </Label>
-                  <Label fx:id="displayFeelsLike" layoutX="9.0" layoutY="49.0" prefHeight="41.0" prefWidth="282.0" text="Feels Like" textFill="#f6f2f2">
+                  <Label fx:id="displayFeelsLike" layoutX="13.0" layoutY="49.0" prefHeight="41.0" prefWidth="282.0" text="Feels Like:" textFill="#f6f2f2">
                      <font>
                         <Font name="Calibri Light" size="30.0" />
                      </font>
                   </Label>
-                  <Label fx:id="displayWindDegree" layoutX="12.0" layoutY="125.0" prefHeight="35.0" prefWidth="282.0" text="Wind Degree" textFill="#f6f2f2">
+                  <Label fx:id="displayWindDegree" layoutX="12.0" layoutY="125.0" prefHeight="35.0" prefWidth="311.0" text="Wind Degree:" textFill="#f6f2f2">
                      <font>
                         <Font name="Calibri Light" size="30.0" />
                      </font>
                   </Label>
-                  <Label fx:id="displaySunset" layoutX="14.0" layoutY="160.0" prefHeight="35.0" prefWidth="282.0" text="Sunset" textFill="#f6f2f2">
+                  <Label fx:id="displaySunset" layoutX="14.0" layoutY="160.0" prefHeight="35.0" prefWidth="282.0" text="Sunset:" textFill="#f6f2f2">
                      <font>
                         <Font name="Calibri Light" size="30.0" />
                      </font>
                   </Label>
-                  <Label fx:id="displaySunrise" layoutX="14.0" layoutY="195.0" prefHeight="35.0" prefWidth="282.0" text="Sunrise" textFill="#f6f2f2">
+                  <Label fx:id="displaySunrise" layoutX="14.0" layoutY="195.0" prefHeight="35.0" prefWidth="282.0" text="Sunrise:" textFill="#f6f2f2">
                      <font>
                         <Font name="Calibri Light" size="30.0" />
                      </font>
                   </Label>
-                  <Label fx:id="displayHumidity" layoutX="14.0" layoutY="230.0" prefHeight="35.0" prefWidth="282.0" text="Humidity" textFill="#f6f2f2">
+                  <Label fx:id="displayHumidity" layoutX="14.0" layoutY="230.0" prefHeight="35.0" prefWidth="282.0" text="Humidity:" textFill="#f6f2f2">
                      <font>
                         <Font name="Calibri Light" size="30.0" />
                      </font>
