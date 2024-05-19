@@ -31,7 +31,7 @@ public class LoginController {
     }
     @FXML
     public void switchtoMain(ActionEvent event) throws IOException {
-        //Login code logic goes here
+    	
     	String username = usernameField.getText();
         String password = passwordField.getText();
 		

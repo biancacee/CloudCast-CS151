@@ -39,8 +39,23 @@ public class WelcomeController {
         String password = passwordField.getText();
         String city = cityField.getText();
         
-        if (signUpManager.contains(username)) {
+        if (signUpManager.contains(username)) 
+        {
         	actiontarget.setText("This username already exists! Try again.");
+            return;
+        }
+        if (!signUpManager.passwordIsValid(password))
+        {
+        	actiontarget.setText("This password is inavlid! Please use:"
+        			+ "\n at least 4 characters, an Uppercase, "
+        			+ "\n a Lowercase, and a number.");
+            return;
+        }
+        if (!signUpManager.nameIsValid(username))
+        {
+        	actiontarget.setText("This username is inavlid! Please use:"
+        			+ "\n at least 4 characters, an Uppercase, "
+        			+ "\n and a Lowercase.");
             return;
         }
         signUpManager.add(username, password, city);

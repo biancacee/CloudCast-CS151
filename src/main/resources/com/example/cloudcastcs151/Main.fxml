@@ -70,6 +70,6 @@
             </Pane>
          </children>
       </Pane>
-      <Button fx:id="logOut" layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#updateWeather" styleClass="modern-button" stylesheets="@main.css" text="Logout" />
+      <Button fx:id="logOut" layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchtoSignUp" styleClass="modern-button" stylesheets="@main.css" text="Logout" />
    </children>
 </Pane>

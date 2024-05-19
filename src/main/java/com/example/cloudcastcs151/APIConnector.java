@@ -2,12 +2,18 @@ package com.example.cloudcastcs151;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -23,6 +29,9 @@ import java.time.ZoneId;
 import java.util.Scanner;
 
 public class APIConnector {
+	private Stage stage;
+    private Scene scene;
+    private Parent root;
     @FXML
     private Pane home;
     @FXML
@@ -51,9 +60,10 @@ public class APIConnector {
     private Label displayRain;
     @FXML
     private Label displayFeelsLike;
+    
     @FXML
     public void updateWeather(ActionEvent event) throws UnsupportedEncodingException {
-        String API_KEY = "";
+        String API_KEY = "4ab20ba2604f8c0d8e9c8c1e989165ad";
 
         Scanner scanner = new Scanner(System.in);
         String location = searchCity.getText();
@@ -124,6 +134,16 @@ public class APIConnector {
             ImageView iconImage = new ImageView(iconURL);
             weatherImage.setImage(iconImage.getImage());
         }
-
+        
     }
+    
+    @FXML
+    public void switchtoSignUp(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
  }

@@ -2,9 +2,15 @@ package com.example.cloudcastcs151;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -18,7 +24,7 @@ public class HelloController {
     private Button submitCity;
     private static final String API_ENDPOINT = "https://www.metaweather.com/api/location/";
     private static final String CITY_CODE = "2459115";
-
+    
     @FXML
     public void displayWeather(ActionEvent event) {
         try {
@@ -39,4 +45,5 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+    
 }
