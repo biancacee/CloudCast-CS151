@@ -1,7 +1,11 @@
 # Cloud Cast
-### PROBLEM TO SOLVE
 
-We are hoping to address several issues relating to user access to accurate weather and temperature information that several weather apps currently face. We hope to solve the issue of the lack of accessibility by creating a weather app with a plethora of functionalities to display and predict accurate weather information as well as get rid of any inconsistencies in weather-predicting algorithms.
+### GROUP MEMBERS RESPONSIBILITY
+- Bianca: Assisted in Front-end development using Java FXML and CSS; Back-end development using Java and JSON to access OpenWeatheAPI; documentation
+- Travis:  Pulled API data and connected API information to front-end through fxml
+- Guadalupe: Implemented user sign-up and login to back-end, UML diagram, and slides
+- Alisha: connected data from API to dashboard, project proposal, and slides
+
 
 ### PREVIOUS WORKS
 
@@ -15,7 +19,6 @@ We will be using JavaFX and Scene Builder to create this weather app. Additional
 With Maven we will need to add necessary dependencies for creating HTTP requests, including libraries such as the Apache HttpComponents library.
 
 ### SOLUTION
-We hope to provide the best user experience in weather applications using an existing API to provide real-time weather forecasts.
 
 ### PLAN
 - Decide which framework and database to use
@@ -50,3 +53,21 @@ End-user:
 - Receive alerts and warnings
 - Create an account to save preferred locations
 - Delete account 
+
+### PROBLEM TO SOLVE
+We hope to provide the best user experience in weather applications using an existing API to provide real-time weather forecasts.Our solution was to build an application that will provide users with the ability to search for cities and return the weather information for the desired location. Users can use the search bar to enter the city name of the location they are interested in. The application uses a reliable API that is used to retrieve weather information for the specified location. Images, temperature, sunset, and sunrise information are some of the features offered through CloudCast.
+
+
+### STEPS TO RUN APPLICATION
+- Must have a valid API key from OpenWeatherAPI version 2.5
+- Clone project from GitHub
+- Open Project in IDE
+- Run the Project to experience CloudCast 
+
+### IMAGES OF PROGRAM
+- [Proposal/CC1.webp]()
+- [Proposal/CC2.webp]()
+- [Proposal/CC3.webp]()
+- [Proposal/CC4.webp]()
+- [Proposal/CC5.webp]()
+- [Proposal/CC6.webp]()
